@@ -1,0 +1,72 @@
+body{
+    margin:0;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 500px;
+
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top:10rem;
+
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+  margin-left: 17px;
+}
+.bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top:3rem;
+    gap:10px;
+    box-shadow: 0px 2px 2px 2px #20212447;
+    border-radius: 24px;
+    width: fit-content;
+    height: 3rem;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+.google{
+    height:100px;
+    width: 18rem;
+}
+.search{
+    border: none;
+    width:25rem;
+    outline: 0;
+    height: 1rem;
+
+}
+.grid{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+    font-family:sans-serif;
+    font-size: 13px;
+    gap :30px;
+    flex-wrap: wrap;
+    max-width: fit-content;
+}
+.icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

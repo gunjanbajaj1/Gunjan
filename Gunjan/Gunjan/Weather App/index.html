@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".\index.css">
+    <title>Document</title>
+</head>
+<body>
+   
+    <input
+    id="searchInput"
+    class="search"
+    placeholder="Enter City"
+    aria-label="Search"
+  />  
+  <button type="submit" placeholder="Search...." name="'Submit">Submit</button>
+  <div id="abc"></div>
+</body>
+<script>
+    function temperature(city){
+        const url =0;
+        
+    const result = fetch(`https://api.openweathermap.org/data/2.5/weather?q=`${city}`&appid=49358103279e963fe89682ead7911671`);
+      result
+      .then((promiseData) => promiseData.json())
+      .then((parsedPromiseData) => {
+        data=parsedPromiseData;
+        RES=Math.floor((data.main.temp) - 273.15);
+        const weather = document.createElement('div')
+          weather.classList.add('weather');
+          weather.innerHTML = `
+          <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${data.main.Math}°C <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>`;
+          abc.innerHTML= "";
+          abc.appendChild(weather);
+      });
+}
+    //const parentProduct = document.getElementById("product");
+    
+    searchInput.addEventListener("input", function () {
+    temperature(searchInput.value);
+  });
+
+</script>
+</html>

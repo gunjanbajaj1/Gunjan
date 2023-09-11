@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-elements{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="form-elements">
+        <button id="signin-btn">Sign in with Google</button>
+        <button id="signin-btn-FB">Sign in with Facebook</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="module">
+  import { onLogin, onLoginFB, onAlreadyLoggedIn } from "./assets/js/login.js";
+
+  const signInBtnElem = document.getElementById("signin-btn");
+  signInBtnElem.addEventListener("click", onLogin);
+
+  const signInBtnElemFB = document.getElementById("signin-btn-FB");
+  signInBtnElemFB.addEventListener("click", onLoginFB);
+
+  // It will check to login
+  onAlreadyLoggedIn();
+</script>

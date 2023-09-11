@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+</head>
+<style>
+    #card{
+        display: flex;
+        height: 50px;
+        gap: 6px;  
+        flex-wrap: wrap;  
+        }
+        .even{
+            background-color: red;
+            padding :50px;
+
+        }
+        .odd{
+            background-color: blue;
+            padding :50px;
+
+        }
+</style>
+<body> 
+    <div id="card">
+
+    </div>
+   
+</body>
+<script>
+    const ParaElem=document.getElementById("card");
+    const arr=[10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105];
+
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]%2===0)
+        {
+            const cardDiv = document.createElement("div");
+            cardDiv.innerHTML=arr[i];
+            cardDiv.classList.add("even");
+            ParaElem.appendChild(cardDiv);
+        }
+        else
+        {
+            const cardDiv = document.createElement("div");
+            cardDiv.innerHTML=arr[i];
+            cardDiv.classList.add("odd");
+            ParaElem.appendChild(cardDiv);
+        }
+    }
+    
+</script>
+</html>

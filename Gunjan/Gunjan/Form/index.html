@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form with Undo/Redo</title>
+</head>
+<body>
+  <form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone"><br><br>
+    
+    <button type="button" id="undoButton">Undo</button>
+    <button type="button" id="redoButton">Redo</button>
+  </form>
+
+  <script>
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const undoButton = document.getElementById('undoButton');
+    const redoButton = document.getElementById('redoButton');
+
+    let current = [];
+    let index= -1;
+    let debounceTimeout;
+
+    function debounce(func, delay) {    //applied Debouncing
+  
+  clearTimeout(debounceTimeout);
+  debounceTimeout = setTimeout(func, delay);
+}
+
+    function saveState() {
+      debounce( () => {
+      const state = {
+        name: nameInput.value,
+        email: emailInput.value,
+        phone: phoneInput.value,
+      };
+      console.log(state);
+      current.push(state);
+      console.log(current);
+      index = current.length - 1;
+      console.log(index,"index");
+    },300
+    )
+  }
+    function undo() {
+      if (index >= 0) {
+        index--;
+        if(index==-1)
+      {
+        nameInput.value = "";
+        emailInput.value = "";
+        phoneInput.value = "";
+
+      }
+      else{
+        console.log(index);
+        const prevState = current[index];
+        console.log(prevState);
+        nameInput.value = prevState.name;
+        emailInput.value = prevState.email;
+        phoneInput.value = prevState.phone;
+        console.log(prevState);
+        console.log(index);
+      }
+        
+      }
+    
+    }
+    console.log(index);
+
+    function redo() {
+      if (index < current.length - 1) {
+        index++;
+        const nextState = current[index];
+        nameInput.value = nextState.name;
+        emailInput.value = nextState.email;
+        phoneInput.value = nextState.phone;        
+      }
+    }
+
+    nameInput.addEventListener('input',saveState );
+    emailInput.addEventListener('input', saveState);
+    phoneInput.addEventListener('input', saveState );
+    undoButton.addEventListener('click', undo);
+    redoButton.addEventListener('click', redo);
+  </script>
+</body>
+</html>

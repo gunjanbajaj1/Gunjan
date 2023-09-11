@@ -1,0 +1,17 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    flex-direction: column;
+    /*background-image: url("1089243691732172802.jpg");
+    z-index: 1;*/
+}
+#searchInput{
+    border: none;
+    width: 15rem;
+    outline: 0;
+    height: 3rem;
+    border-radius: 25px;
+    text-align: center;
+}

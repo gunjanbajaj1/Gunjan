@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Facebook Authentication</title>
+</head>
+<body>
+    <h1>Firebase Facebook Authentication</h1>
+    <button id="facebook-login">Log in with Facebook</button>
+
+       <!-- update the version number as needed -->
+       <script defer src="/__/firebase/10.3.1/firebase-app-compat.js"></script>
+       <!-- include only the Firebase features as you need -->
+       <script defer src="/__/firebase/10.3.1/firebase-auth-compat.js"></script>
+    <!-- Your JavaScript code -->
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const facebookLoginButton = document.getElementById("facebook-login");
+
+        // Add an event listener to the login button
+        facebookLoginButton.addEventListener("click", () => {
+            // Create an instance of the Facebook provider
+            const provider = new firebase.auth.FacebookAuthProvider();
+
+            // Sign in with Facebook using a popup window
+            firebase
+                .auth()
+                .signInWithPopup(provider)
+                .then((result) => {
+                    // User is signed in via Facebook
+                    console.log("Successfully signed in with Facebook:", result.user);
+                    alert("Logged in with Facebook!");
+                })
+                .catch((error) => {
+                    // Handle any errors
+                    console.error("Error signing in with Facebook:", error);
+                    alert("Error: " + error.message);
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <style>
+    .card {
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-body {
+      position: relative;
+    }
+
+    .delete-btn,
+    .edit-btn {
+      position: absolute;
+      top: 8px;
+    }
+
+    .delete-btn {
+      right: 50px;
+    }
+
+    .edit-btn {
+      right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="names" class="mt-4"></div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const namesElem = document.getElementById("names");
+
+    const namesList = ["Romesh", "Akash", "Ali", "Sonia", "Palak"];
+
+    for (let i = 0; i < namesList.length; i++) {
+      const cardDiv = document.createElement("div");
+      cardDiv.classList.add("card", "mb-3"); // Bootstrap card class aur margin-bottom class jode hai
+
+      const cardBodyDiv = document.createElement("div");
+      cardBodyDiv.classList.add("card-body", "position-relative", "text-center"); // Bootstrap card-body class aur position-relative class jode hai
+
+      const pTag = document.createElement("p");
+      pTag.innerText = namesList[i];
+      pTag.classList.add("text-dark", "h4", "mb-4"); // Text color aur heading size ke liye Bootstrap classes jode hai
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.innerText = "Delete";
+      deleteBtn.classList.add("btn", "btn-danger", "delete-btn", "mr-2"); // Button style aur custom delete-btn class ke liye Bootstrap classes jode hai
+
+      const editBtn = document.createElement("button");
+      editBtn.innerText = "Edit";
+      editBtn.classList.add("btn", "btn-primary", "edit-btn"); // Button style aur custom edit-btn class ke liye Bootstrap classes jode hai
+
+      cardBodyDiv.appendChild(pTag);
+      cardBodyDiv.appendChild(deleteBtn);
+      cardBodyDiv.appendChild(editBtn);
+      cardDiv.appendChild(cardBodyDiv);
+      namesElem.appendChild(cardDiv);
+    }
+  </script>
+</body>
+</html>

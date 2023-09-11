@@ -1,0 +1,58 @@
+     .boxp {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-top: 130px;
+        gap: 30px;
+      }  
+      .box {
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+      }
+      .box-item {
+        background-color: white;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+      }
+      .heart{
+        width: 10px;
+        height: 10px;
+        float: right;
+        padding-top: 20px;
+    } 
+      .details{
+        font-family: sans-serif;
+        font-size: 10px;
+        display: flex;
+
+      }
+      .sub-details{
+        font-family: sans-serif;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column ;
+       
+      }
+      .discount-price{
+        font-family: sans-serif;
+        font-size: 12px;
+        padding-top: 5px;
+      }
+      .actual-price{
+        font-family: sans-serif;
+        font-size: 8px;
+        text-decoration: line-through;
+        padding-top: 5px;
+      }
+      .tribe{
+        font-family: sans-serif;
+        font-size: 10px;
+        padding: 2px 8px;
+        margin: 0;
+        width: max-content;
+        background-color: #f7f7f7;
+        color: #525252;
+      }

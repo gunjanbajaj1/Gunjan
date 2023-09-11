@@ -1,0 +1,107 @@
+cssfile
+
+
+
+.c10{
+    color:rgb(152, 252, 3)
+}
+
+/* id selector */
+
+#id{
+    color:goldenrod;
+}
+
+  /* universal selector */
+*{
+    border: 3px solid black;
+    padding: 1rem;
+}
+
+/* pusedo class selector */
+
+#pseudo::first-letter{
+    color: brown;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+#pseudo::after{
+    content: "I am added after ";
+}
+
+/* element selector or tag selector */
+p{
+    letter-spacing: 1px;
+}
+
+/* Group Selection */
+p,div{
+    color: crimson;
+}
+
+/* adjacent selector just after sibling selector */
+div+p{
+    color: darkblue;
+}
+
+/* detaling selectio  or combnator selector*/
+div p{
+    border-radius: 1rem;
+}
+
+/* pusedo first child selection */
+.c10:first-child{
+    border-radius: 2rem;
+}
+
+/* pusedo last child selection */
+.c10:last-child{
+    background-color: purple;    /* not working */
+}
+
+/* child selector */
+div > p{
+    font-weight: 700;
+    font-size: 1.5rem;
+
+}
+
+/* general sibling selector */
+
+div ~ p{
+    border-color: red;  /* this will not be applied lowe one will be applied*/
+}
+p ~ p{
+    border-color: indigo;
+}
+
+/* attribute selector */
+/* here I am caonsidering class as attribute but attributes can be anything */
+
+[class^="att"]{      /* in this wherevr class name starts with att will be selected */
+    color: rgb(89, 11, 234);
+    font-weight: bolder;
+}
+
+[class~="attri"]{
+    color: rgb(249, 241, 8);
+}
+
+[class$="1"]{
+    font-size: 2rem;
+}
+
+[class|="bttri"]{
+    color:rgb(171, 130, 210);
+}
+
+[class*="tt"]{
+    background-color: purple;
+}
+
+
+li:not(li:nth-child(4)){
+    color: red;
+    font-size: 25px;
+}
