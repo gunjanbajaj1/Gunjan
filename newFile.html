@@ -26,21 +26,24 @@
 </html>
 
 <script>
-  function myFunction(val) {
-    const collection = document.body.childNodes;
+  const collection = document.body.children;
+  function myFunction(collection,val) {
+    
     console.log(collection);
     for (let i = 0; i < collection.length; i++) {
-        /*if(collection[i].hasChildNodes())
+        if(collection[i].childElementCount===1)
         {
-            myFunction(collection[i]);
-        }*/
-         if (val == collection[i].id) {
+            myFunction(collection[i].children,val);
+        }
+        else if (val == collection[i].id) {
+        console.log(collection[i].childElementCount);
+        console.log(collection[i].children);
         console.log(collection[i]);
         break;
       }
     }
   }
 
-  const elem = myFunction("h1-tag");
+  const elem = myFunction(collection,"h2-tag");
   console.log(elem);
 </script>
