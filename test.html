@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <div>
+          <h1 id="h1-tag">I am 1st h1 element</h1>
+        </div>
+      </div>
+    </div>
+    <h2 id="h2-tag">I am 1st h2 element</h2>
+
+    <p id="h2-tag">I am 1st p element</p>
+
+    <h2 id="h2-tag">I am 2nd h2 element</h2>
+    <div id="div-tag">I am 1st div element</div>
+    <span id="span-tag">I am 1st span element</span><br /><br />
+   <!--- Enter ID to be searched:<input type="text" id="Value" required />
+    <button id="btn">Search</button>-->
+  </body>
+</html>
+
+<script>
+  function myFunction(val) {
+    const collection = document.body.childNodes;
+    console.log(collection);
+    for (let i = 0; i < collection.length; i++) {
+        /*if(collection[i].hasChildNodes())
+        {
+            myFunction(collection[i]);
+        }*/
+         if (val == collection[i].id) {
+        console.log(collection[i]);
+        break;
+      }
+    }
+  }
+
+  const elem = myFunction("h1-tag");
+  console.log(elem);
+</script>

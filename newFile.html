@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>The Element Object</h1>
-<h2>The children Property</h2>
+<h1 id="h1-tag">I am 1st h1 element</h1>
+<h2 id="h2-tag">I am 1st h2 element</h2>
 
-<p>Click "Change" to change the background of all child elements of body.</p>
+<p id="h2-tag">I am 1st p element</p>
 
-<button onclick="myFunction()">Change</button>
-
-<h2 id="abc">I am a h2 element</h2>
-<div>I am a div element</div>
-<span>I am a span element</span>
-
+<h2 id="h2-tag">I am 2nd h2 element</h2>
+<div id="div-tag">I am 1st div element</div>
+<span id="span-tag">I am 1st span element</span><br><br>
+Enter ID to be searched:<input type="text" id="Value" required></input>
+<button id="btn">Search</button>
 <script>
-function myFunction() {
+
+
+function myFunction(val) {
 const collection = document.body.children;
 for (let i = 0; i < collection.length; i++) {
-    console.log(collection[i].id);
+    if(val==collection[i].id){
+      console.log(collection[i]);
+      break;
+    } 
   }
 }
+const button=document.getElementById("btn");
+const input1=document.getElementById("Value");
+console.log(input1.value);
+
+button.addEventListener('click', () => {
+  myFunction(input1.value);
+    });
 </script>
 
 </body>
