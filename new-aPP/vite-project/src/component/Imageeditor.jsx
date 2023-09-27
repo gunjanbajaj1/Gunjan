@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './image.css'
 
 function ImageEditor() {
 	const [file, setFile] = useState();
@@ -9,9 +10,10 @@ function ImageEditor() {
 
 	return (
 		<div className="App">
-			<h2>Add Image:</h2>
+			<div className="input-bar">
 			<input type="file" onChange={handleChange} />
-			<img src={file} style={{backdropFilter:"brightness(10%)"}} />
+			</div>
+			<img src={file} style={{width:"500px", height:"500px"}}/>
 		</div>
 
 	);
